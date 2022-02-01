@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+    scroll-behavior: smooth;
+
+}
+@keyframes textAffichage {
+    from {display: none;opacity: 0;top:30px;/*margin-top: 5rem;*/}
+    to {display:block;opacity: 1;top:0;/*margin: 0rem;*/}
+  }
+
+body{
+    background-color: rgb(238, 238, 238);
+    &::-webkit-scrollbar {
+        width: 0px;
+      }
+}
+// Header _____________________________________________________
+.header{
+    transition-duration: 0.3s;
+    position: fixed;
+    background-color: black;
+    //top:-8vh;
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: centre;
+    z-index: 5;
+    .menu{
+        width: 50rem;
+        height: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        ul{
+            width: 50rem;
+            height: 100%;
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            list-style-type: none;
+            li{
+                
+                a{
+                    color: white; 
+                    transition-duration: 0.3s; 
+                }
+                color: white;
+            }
+        }
+    }
+
+// Phone screen__________________________________
+    @media (max-width: 800px) {
+        .menu {
+          width: 100%;
+        }
+      }
+}
+
+
+// Content _____________________________________________________
+.content{
+    
+    height: 100vh;
+    width: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 0px;
+      }
+    
+    section{  
+        width: 100%;
+        height: 100vh;
+        flex: none;
+        scroll-snap-align: start;
+    }
+    .home{
+        background-color: black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .description{
+            width: 30%;
+            .title{
+                margin: 1.5rem 0rem;   
+                overflow: hidden;
+                div{
+                    position: relative;
+                    color: white;
+                    animation-name: textAffichage;
+                    animation-duration: 1s;
+                }              
+            }
+            .subtitle{
+                
+                overflow: hidden;
+                div{
+                    position: relative;
+                    color: white;
+                    animation-name: textAffichage;
+                    animation-duration: 1.2s;
+                }
+            }
+    
+        }
+        .works{
+            position: relative;
+            width: 50%;
+            height: 70%;   
+            scroll-snap-type: both mandatory;
+            overflow: scroll;
+            display: flex;
+            overflow-y: hidden;
+            mask-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0), transparent);
+    
+            
+            &::-webkit-scrollbar {
+                width: 0px;
+              }
+            .work{
+    
+                flex: none;
+                scroll-snap-align: start;
+                margin: 5px 10px;
+    
+                height:95%;
+                width: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                
+                img{
+                    
+                    width: 110%;
+                    transition-duration: 1s;
+                    &:hover{
+                        width: 130%;
+                    }    
+                }
+            }
+            
+        }
+
+ // Phone screen__________________________________       
+        @media (max-width: 800px) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 8vh;
+            .description{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+                width: 85%;
+                .title{
+                    margin: 1.5rem 0rem;   
+                    overflow: hidden;
+                    div{
+                        position: relative;
+                        color: white;
+                        animation-name: textAffichage;
+                        animation-duration: 1s;
+                        text-align: center;
+                    }              
+                }
+                .subtitle{     
+                    overflow: hidden;
+                    div{
+                        position: relative;
+                        color: white;
+                        animation-name: textAffichage;
+                        animation-duration: 1.2s;
+                        text-align: center;
+                    }
+                }
+        
+            }
+            .works{
+                margin-bottom: 50px;
+                position: relative;
+                width: 80%;
+                height: 30%;   
+                scroll-snap-type: both mandatory;
+                overflow: scroll;
+                display: flex;
+                overflow-y: hidden;
+                mask-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0), transparent);
+        
+                
+                &::-webkit-scrollbar {
+                    width: 0px;
+                  }
+                .work{
+        
+                    flex: none;
+                    scroll-snap-align: start;
+                    margin: 5px 10px;
+        
+                    height:95%;
+                    width: 80%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    
+                    img{
+                        
+                        width: 100%;
+                        transition-duration: 1s;
+                        &:hover{
+                            width: 130%;
+                        }    
+                    }
+                }
+                
+            }
+          }
+    }
+    .contact{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .email{
+            overflow: hidden;
+            margin: 30px;
+            h2{
+                position: relative;
+                animation-name: textAffichage;
+                animation-duration: 1.2s;
+                animation-delay: 0.3s;
+                animation-play-state: paused;
+            }
+        }
+        .icon{
+            overflow: hidden;
+            margin: 5px;
+            a{  
+
+                position: relative;
+                animation-name: textAffichage;
+                animation-duration: 1.2s;
+                animation-delay: 0.3s;
+                animation-play-state: paused;
+                margin: 0px 10px;
+                img{    
+                    width: 20px;
+                }
+            }
+        }
+
+    }
+}
+
+
+//________________________________________________________
+.header.scroll{
+    
+    background-color: rgba(255, 255, 255, 0);
+    
+    .menu{
+        ul{
+            li{
+                a{
+                    color:black;
+                    
+                }
+            }
+        }
+    }
+}
+.contact.animation{
+ 
+        .email{
+
+            h2{
+                
+                animation-play-state: running;
+            }
+        }
+        .icon{
+
+            a{  
+                animation-play-state: running;
+            }
+        }
+}
+
+//Works Content___________________________________________________
+
+.contentWorks{
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .worksPresentation{
+        width: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .work{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            margin: 20px;
+            max-width: 500px;
+            .imageSite{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                a{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    height: 100%;
+                    width: 100%;
+                    img{
+                        width: 95%;
+                        transition-duration: 1s;
+                        &:hover{
+                            width: 110%;
+                        }
+                    }
+                }
+            }
+        }
+// Phone screen__________________________________
+        @media (max-width: 800px) {
+            width: 100%;
+            .work{
+                width: 90%;
+                //height: auto;
+                padding: 5px;
+                margin: 10px 0px;
+                .imageSite{
+                    width: 100%; 
+                    overflow: hidden;
+                    height: auto;
+                    a{
+                        height: 100%;
+                        width: 100%;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.footer{
+    width: 100%;
+    height: 8vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon{
+        max-width: 500px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        a{
+            margin: 0px 20px;
+            img{
+                width: 20px;
+            }
+        }
+        @media (max-width: 800px) {
+            justify-content: space-around;
+            a{
+                margin: 0px 10px;
+                img{
+                    width: 15px;
+                }
+            }
+        }
+    }
+}
