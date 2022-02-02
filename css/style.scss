@@ -8,8 +8,8 @@
 
 }
 @keyframes textAffichage {
-    from {display: none;opacity: 0;top:30px;/*margin-top: 5rem;*/}
-    to {display:block;opacity: 1;top:0;/*margin: 0rem;*/}
+    from {display: none;opacity: 0;top:30px;}
+    to {display:block;opacity: 1;top:0;}
   }
 
 body{
@@ -23,7 +23,6 @@ body{
     transition-duration: 0.3s;
     position: fixed;
     background-color: black;
-    //top:-8vh;
     height: 8vh;
     width: 100%;
     display: flex;
